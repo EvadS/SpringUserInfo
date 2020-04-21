@@ -16,6 +16,7 @@
 
     <properties>
         <java.version>1.8</java.version>
+        <app.name>app</app.name>
     </properties>
 
     <dependencies>
@@ -58,6 +59,7 @@
     </dependencies>
 
     <build>
+        <finalName>${app.name}</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
