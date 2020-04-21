@@ -1,8 +1,8 @@
 FROM openjdk:8-jdk
 COPY /target/app.jar /app/
-COPY start.sh  /app/
 
 WORKDIR /app
 
 EXPOSE 8000
-CMD ./start.sh
+
+ENTRYPOINT ["java", "-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5006  -Xms1024M -Xmx1536M", "-jar", "app.jar"]
